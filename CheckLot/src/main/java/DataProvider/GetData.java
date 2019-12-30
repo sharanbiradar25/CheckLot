@@ -163,6 +163,6 @@ public class GetData {
 		GetData g=new GetData();
 		g.convertSellerCode();
 		g.writeData();
-//test
+
 	}
 }
