@@ -22,7 +22,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.codehaus.groovy.ast.stmt.SwitchStatement;
 
 public class GetData {
-	XSSFSheet sheet;
+	//XSSFSheet sheet;
 	XSSFWorkbook wb;
 	Cell cell;
 	int lastRow;
@@ -38,12 +38,12 @@ public class GetData {
 	List<String> queries = new ArrayList<String>();
 
 	public XSSFSheet getSheets(String sheets) throws IOException {
-		File file = new File("C:\\Users\\shbiradar\\workspace\\CheckLot\\CheckLot2.xlsx");
+		File file = new File(System.getProperty("user.dir") + "/CheckLot2.xlsx");
 
 		FileInputStream ip = new FileInputStream(file);
 		wb = new XSSFWorkbook(ip);
-		sheet =wb.getSheet(sheets);
-		return sheet;
+		sh =wb.getSheet(sheets);
+		return sh;
 	}
 
 	public void getData() throws IOException {
@@ -131,13 +131,16 @@ public class GetData {
 		GetData g=new GetData();
 		lots.addAll(db.getLots("LTLOTNBR"));
 		System.out.println(lots);
+		File file = new File(System.getProperty("user.dir") + "/CheckLot2.xlsx");
+
+		FileInputStream ip = new FileInputStream(file);
+		wb = new XSSFWorkbook(ip);
 		sh=g.getSheets("Seller");
 		int lastRow = sh.getLastRowNum();
 		for (int i = 1; i < lastRow; i++) {
 			Row row = sh.getRow(i);
 			for (int k = 0; k <= 2; k++) {
 				for (int j = 0; j < lots.size(); j++) {
-
 					if (k == 0) {
 						String lot = lots.get(j);
 						row.getCell(k).setCellValue(lot);
@@ -151,7 +154,7 @@ public class GetData {
 			}
 		}
 		try{
-			FileOutputStream op=new FileOutputStream("C:\\Users\\shbiradar\\workspace\\CheckLot\\CheckLot2.xlsx");
+			FileOutputStream op=new FileOutputStream(System.getProperty("user.dir") + "/CheckLot2.xlsx");
 			wb.write(op);
 			System.out.println("Written Data");
 			op.close();

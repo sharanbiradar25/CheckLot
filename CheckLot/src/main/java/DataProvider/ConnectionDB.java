@@ -39,6 +39,7 @@ public class ConnectionDB {
 				while (result.next()) {
 					value = result.getString(column);
 					info.add(value);
+					break;
 					
 				}
 			}
