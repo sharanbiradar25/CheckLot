@@ -38,9 +38,7 @@ public class Sanity {
 
 	@DataProvider(name = "SearchProvider")
 	public Map<String, String> getDataFromDataprovider() throws ClassNotFoundException, IOException, SQLException {
-
 		Map<String, String> map = new HashMap<String, String>();
-
 		for (int i = 0; i < lotList.size(); i++) {
 			map.put(lotList.get(i), codeList.get(i));
 		}

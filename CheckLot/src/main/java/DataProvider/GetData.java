@@ -20,7 +20,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.codehaus.groovy.ast.stmt.SwitchStatement;
+
 
 public class GetData {
 	//XSSFSheet sheet;
@@ -39,6 +39,7 @@ public class GetData {
 	List<String> queries = new ArrayList<String>();
 
 	public XSSFSheet getSheets(String sheets) throws IOException {
+		System.out.println("Fetching Data from XL Sheet....");
 		File file = new File(System.getProperty("user.dir") + "/CheckLot2.xlsx");
 
 		FileInputStream ip = new FileInputStream(file);
@@ -85,10 +86,12 @@ public class GetData {
 				}
 
 			}
+			
 		}
 	}
 
 	public List<String> convertSellerCode() throws ClassNotFoundException, IOException, SQLException {
+		System.out.println("Converting Seller codes to keypad codes is in process...");
 		ConnectionDB db=new ConnectionDB();
 		sellerCodes = db.getLots("LTSLRNBR");
 		String result = "";
