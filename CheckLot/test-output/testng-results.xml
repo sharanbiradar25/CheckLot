@@ -2,16 +2,16 @@
 <testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="42855" started-at="2020-01-09T19:56:51Z" finished-at="2020-01-09T19:57:34Z">
+  <suite name="Default suite" duration-ms="46841" started-at="2020-02-11T15:50:34Z" finished-at="2020-02-11T15:51:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="42855" started-at="2020-01-09T19:56:51Z" finished-at="2020-01-09T19:57:34Z">
+    <test name="Default test" duration-ms="46841" started-at="2020-02-11T15:50:34Z" finished-at="2020-02-11T15:51:20Z">
       <class name="Test.Sanity">
-        <test-method status="PASS" signature="data()[pri:0, instance:Test.Sanity@2d209079]" name="data" is-config="true" duration-ms="42825" started-at="2020-01-10T01:26:51Z" finished-at="2020-01-10T01:27:34Z">
+        <test-method status="PASS" signature="data()[pri:0, instance:Test.Sanity@2d209079]" name="data" is-config="true" duration-ms="46827" started-at="2020-02-11T21:20:34Z" finished-at="2020-02-11T21:21:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- data -->
-        <test-method status="SKIP" signature="testSeller(java.util.Map)[pri:0, instance:Test.Sanity@2d209079]" name="testSeller" duration-ms="0" started-at="2020-01-10T01:27:34Z" data-provider="SearchProvider" finished-at="2020-01-10T01:27:34Z">
+        <test-method status="SKIP" signature="testSeller(java.util.Map)[pri:0, instance:Test.Sanity@2d209079]" name="testSeller" duration-ms="0" started-at="2020-02-11T21:21:20Z" data-provider="SearchProvider" finished-at="2020-02-11T21:21:20Z">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
