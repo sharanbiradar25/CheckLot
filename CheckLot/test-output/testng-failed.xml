@@ -3,7 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="CheckLot_2.Sellers"/>
+      <class name="Test.Sanity"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="Test.Sanity">
+        <methods>
+          <include name="data"/>
+          <include name="testSeller"/>
+        </methods>
+      </class> <!-- Test.Sanity -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

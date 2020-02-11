@@ -17,6 +17,7 @@ import java.util.Set;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.codehaus.groovy.ast.stmt.SwitchStatement;
@@ -136,23 +137,24 @@ public class GetData {
 		FileInputStream ip = new FileInputStream(file);
 		wb = new XSSFWorkbook(ip);
 		sh=g.getSheets("Seller");
-		int lastRow = sh.getLastRowNum();
-		for (int i = 1; i < lastRow; i++) {
-			Row row = sh.getRow(i);
+		//int lastRow = sh.getLastRowNum();
+		
+			
 			for (int k = 0; k <= 2; k++) {
 				for (int j = 0; j < lots.size(); j++) {
+					XSSFRow row = sh.getRow(j+1);
 					if (k == 0) {
 						String lot = lots.get(j);
 						row.getCell(k).setCellValue(lot);
 					} else if (k == 2) {
 						String code = convertedCodes.get(j);
-						row.getCell(2).setCellValue(code);
+						row.getCell(k).setCellValue(code);
 					} else {
 						k++;
 					}
 				}
 			}
-		}
+		
 		try{
 			FileOutputStream op=new FileOutputStream(System.getProperty("user.dir") + "/CheckLot2.xlsx");
 			wb.write(op);
